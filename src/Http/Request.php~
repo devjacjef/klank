@@ -1,0 +1,24 @@
+<?php
+
+namespace Src\Http;
+
+class Request {
+    // These are going to store a built up request
+    private $url;
+    private $headers = [] ;
+    private $body;
+
+    // TODO: Build the constructor.
+    public function __construct() {
+        
+    }
+
+    // Function to build request
+    private function setup() {}
+
+    // Function to execute request
+    private function send() {}
+
+    // Get input from PHP application
+    public function input() {}
+}

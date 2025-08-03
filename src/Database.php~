@@ -1,0 +1,55 @@
+<?php
+
+namespace Src;
+
+use Exception;
+use InvalidArgumentException;
+use PDOException;
+use Src\Patterns\Singleton;
+
+/**
+ * Super simple database that tests for a connection and executes raw queries
+ */
+class Database extends Singleton
+{
+    private \PDO $pdo;
+
+    private $connected;
+
+    // Setting up the connection
+    // Return true if the connection is fine
+    public static function connect($dsn, $user, $pw)
+    {
+        if (in_array(null, func_get_args(), true)) {
+            throw new InvalidArgumentException('All connection parameters must be provided.');
+        }
+
+        try {
+            $instance = self::getInstance();
+            $instance->pdo = new \PDO($dsn, $user, $pw);
+            $instance->connected = true;
+        } catch (PDOException $e) {
+            // TODO: Replace with a Logger
+            echo "Connection failed: " . $e->getMessage() . "\n";
+            $instance->connected = false;
+        }
+    }
+
+    // Executes a query to the database
+    // Check if the instance is already connected
+    // Check if there is an sql statement?
+    // try execute a query
+    public static function query($sql) {
+        $instance = self::getInstance();
+
+        if(!$instance->connected) {
+            throw new Exception('You are not connected to the database.');
+        }
+
+        try {
+            // TODO: Write the prepare and execute.
+        } catch (Exception $e) {
+            // TODO: Handle Exception.
+        }
+    }
+}

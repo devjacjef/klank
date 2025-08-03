@@ -1,0 +1,13 @@
+<?php
+
+// Should clean this up
+// Maybe a tester class that looks for files in tests and attempts to execute them? 
+
+require_once __DIR__ . '/../vendor/autoload.php';
+
+use Src\Database;
+
+$database = Database::getInstance();
+// need to find a way to test this
+$conn = $database::connect("mysql:host=localhost;dbname=test", "root", "hotdog");
+var_dump($database);
