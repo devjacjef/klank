@@ -7,4 +7,5 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Src\\' => array($baseDir . '/src'),
+    'Psr\\Http\\Message\\' => array($vendorDir . '/psr/http-message/src'),
 );

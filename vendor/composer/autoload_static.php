@@ -11,12 +11,20 @@ class ComposerStaticInitd751713988987e9331980363e24189ce
         array (
             'Src\\' => 4,
         ),
+        'P' => 
+        array (
+            'Psr\\Http\\Message\\' => 17,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
         'Src\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
+        ),
+        'Psr\\Http\\Message\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
     );
 
