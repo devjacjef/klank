@@ -1,0 +1,25 @@
+# IGNORE EMACS AUTO-SAVE FILES
+*~
+.#*
+*\#
+
+# IGNORE PHP FILES
+/vendor/           # Composer dependencies
+*.log              # Log files
+*.cache            # Cache files
+*.env              # Environment config
+.env.*             # Other environment configs
+.phpunit.result.cache  # PHPUnit result cache
+
+# Ignore IDE/editor files
+*.swp
+*.swo
+.idea/
+.vscode/
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore my personal notes
+org/
