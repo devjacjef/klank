@@ -3,8 +3,5 @@
 	"psr-4": {
 	    "Src\\":"src/"
 	}
-    },
-    "require": {
-        "psr/http-message": "^2.0"
     }
 }

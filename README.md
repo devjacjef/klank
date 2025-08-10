@@ -2,7 +2,9 @@
 
 This project is a learning exercise for me to learn better practices when developing with PHP and to build a foundation for future solo projects I work on.
 
-The goal is to produce a PSR compliant framework that may be used with minimal dependencies.
+The goal is to learn about PHP and to develop a framework show-casing my understanding of backend concepts.
+
+A secondary goal is to try and pick up good practices whilst I develop this framework.
 
 ## Directory Structure
 
