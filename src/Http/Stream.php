@@ -21,10 +21,13 @@ class Stream
      *
      * @return int Amout of bytes written.
      */
-    public function write(string $data): int
+    public function write(string $data, int $length = null): int|false
     {
+        if ($length === null) {
+            return fwrite($this->resource, $data);
+        }
 
-        return 0;
+        return fwrite($this->resource, $data, $length);
     }
 
     /**
