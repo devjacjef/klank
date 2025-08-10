@@ -20,4 +20,12 @@ var_dump($stream);
 
 // Reading file
 
+// echo $stream->read(2) . PHP_EOL;
+
+// Writing to file
+
+echo $stream->read(2) . PHP_EOL;
+
+echo $stream->write("New test!") . PHP_EOL;
+
 echo $stream->read(2) . PHP_EOL;
