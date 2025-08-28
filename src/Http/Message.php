@@ -1,14 +1,17 @@
 <?php
 
+namespace Src\Http;
+
 use Psr\Http\Message\MessageInterface;
 use Psr\Http\Message\StreamInterface;
+
 use Src\Http\Stream;
 
 class Message implements MessageInterface {
 
-    private $version;
+    private $protocolVersion;
     private array $headers = [];
-    private $body;
+    private StreamInterface $body;
 
     public function getProtocolVersion(): string {
         return "";
