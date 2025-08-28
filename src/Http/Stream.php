@@ -2,50 +2,72 @@
 
 namespace Src\Http;
 
-class Stream
+use Psr\Http\Message\StreamInterface;
+
+class Stream implements StreamInterface
 {
 
-    protected $resource;
+    private $resource;
+    private array $metadata;
 
-    /**
-     * @param int $length Amount of bytes to read.
-     *
-     * @return string|false Returns the string or false on failure.
-     */
-    public function read(int $length): string|false {
-        return fread($this->resource, $length);
+    public function __toString(): string {
+        return "";
     }
 
-    /**
-     * @param string $data Data to be written.
-     *
-     * @return int Amout of bytes written.
-     */
-    public function write(string $data, int $length = null): int|false
-    {
-        if ($length === null) {
-            return fwrite($this->resource, $data);
-        }
-
-        return fwrite($this->resource, $data, $length);
+    public function close(): void {
+        
     }
 
-    /**
-     * TODO: Doc this
-     */
-    public function open(string $path, string $mode, int $options, ?string &$opened_path): bool
-    {
-
-        $this->resource = fopen($path, $mode, false, null);
-
-        if (($options & STREAM_USE_PATH) && $this->resource !== false) {
-            $opened_path = realpath($path) ?: $path;
-        }
-
-        return $this->resource !== false;
+    public function detach() {
+        
     }
 
-    public function close() {}
+    public function getSize(): ?int {
+        return 0;
+    }
 
-    public function eof() {}
+    public function tell(): int {
+        return 0;
+    }
+
+    public function eof(): bool {
+        return false;
+    }
+
+    public function isSeekable(): bool {
+        return false;
+    }
+
+    public function seek(int $offset, int $whence = SEEK_SET): void {
+    
+    }
+
+    public function rewind(): void {
+        
+    }
+
+    public function isWritable(): bool {
+        return false;
+    }
+
+    public function write(string $string): int {
+        return 0;
+    }
+
+    public function isReadable(): bool {
+        return false;
+    }
+
+    public function read(int $length): string {
+        return "";
+    }
+
+    public function getContents(): string {
+        return "";
+    }
+
+    public function getMetadata(?string $key = null) {
+        
+    }
+
 }

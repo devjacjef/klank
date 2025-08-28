@@ -1,20 +1,8 @@
-# `barebones`
+# `klank`
 
-This project is a learning exercise for me to learn better practices when developing with PHP and to build a foundation for future solo projects I work on.
+`klank` as it stands is a research-exercise and a framework for my personal projects. 
 
-The goal is to learn about PHP and to develop a framework show-casing my understanding of backend concepts.
+The goal for this project is to build a deep understanding of backend concepts and the PHP languge as well as an understanding of surronding standards when building dependencies.
 
-A secondary goal is to try and pick up good practices whilst I develop this framework.
-
-## Directory Structure
-
-- `assets` - Assets such as images.
-- `bin` - Application executables.
-- `config` - Application configurations.
-- `public` - Servable by the web-server. This is where users are expected to enter the site.
-- `src` - This contains source code for the framework.
-- `tests` - Folder containing scripts that test functionality throughout the site.
-- `var` - Caches, Logs.
-- `vendor` - Composer files.
-- `views` - Contains views for the application.
+This acts as a proof of my working knowledge of PHP and architecture. Going forward, this project will see a lot of heavy changes and it will not be in a ready state for some time.
 
