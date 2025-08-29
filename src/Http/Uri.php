@@ -23,7 +23,7 @@ class Uri implements UriInterface
         }
     }
 
-    private function buildAuthority($host = '') {
+    private function buildauthority($host = '') {
         if ($host) {
             $this->authority = ($this->userInfo ? $this->userInfo . '@' : '') . $host;
             if ($this->port) {
@@ -40,7 +40,7 @@ class Uri implements UriInterface
             $this->scheme = $parts['scheme'];
         }
 
-        $this->buildUserInfo($parts['user'] ?? '', $parts['pass'] ?? null);
+        $this->builduserinfo($parts['user'] ?? '', $parts['pass'] ?? null);
 
         if (isset($parts['host'])) {
             $this->host = $parts['host'];
@@ -50,7 +50,7 @@ class Uri implements UriInterface
             $this->port = $parts['port'];
         }
 
-        $this->buildAuthority($parts['host']);
+        $this->buildauthority($parts['host'] ?? '');
 
         if (isset($parts['path'])) {
             $this->path = $parts['path'];
@@ -67,42 +67,42 @@ class Uri implements UriInterface
 
     public function getScheme(): string
     {
-        return "";
+        return $this->scheme ?? '';
     }
 
     public function getAuthority(): string
     {
-        return "";
+        return $this->authority ?? '';
     }
 
-    public function getUserInfo(): string
+    public function getUserinfo(): string
     {
-        return "";
+        return $this->userInfo ?? '';
     }
 
     public function getHost(): string
     {
-        return "";
+        return $this->host ?? '';
     }
 
     public function getPort(): ?int
     {
-        return 0;
+        return $this->port ?? null;
     }
 
     public function getPath(): string
     {
-        return "";
+        return $this->path ?? '';
     }
 
     public function getQuery(): string
     {
-        return "";
+        return $this->query ?? '';
     }
 
     public function getFragment(): string
     {
-        return "";
+        return $this->fragment ?? '';
     }
 
     public function withScheme(string $scheme): UriInterface
