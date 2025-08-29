@@ -7,8 +7,19 @@ use Psr\Http\Message\StreamInterface;
 class Stream implements StreamInterface
 {
 
-    private $resource;
-    private array $metadata;
+    private $stream; // Should be a resource
+    private $size;
+    private $seekable;
+    private $writeable;
+    private $readable;
+
+    public function __construct($stream) {
+
+    }
+
+    public function __destruct() {
+        $this->close();
+    }
 
     public function __toString(): string {
         return "";
