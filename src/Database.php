@@ -10,7 +10,7 @@ use Src\Patterns\Singleton;
 /**
  * Super simple database that tests for a connection and executes raw queries
  */
-class Database extends Singleton
+class KlankPDO extends Singleton
 {
     private \PDO $pdo;
 
