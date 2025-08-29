@@ -6,7 +6,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
 use Src\Http\Uri;
 
 $uriString = 'https://username:password@www.example.com:8080/path/to/resource?foo=bar&baz=qux#section1';
-$uri = new \Src\Http\Uri($uriString);
+$uri = new Uri($uriString);
 
 echo 'Scheme: ' . $uri->getScheme() . PHP_EOL;
 echo 'Authority: ' . $uri->getAuthority() . PHP_EOL;
